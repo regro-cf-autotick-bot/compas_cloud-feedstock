@@ -1,5 +1,5 @@
 {% set name = "compas_cloud" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f5c9eebcbe59e8ab14e40bb69be2cf8c1c80dd6a4faad27411215a76bd30112d
+  sha256: 3336c91601c825186457b9bcfeaac4b43a817d81beab395b8eb85b5f1f4c7382
 
 build:
   noarch: python
