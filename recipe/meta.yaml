@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3336c91601c825186457b9bcfeaac4b43a817d81beab395b8eb85b5f1f4c7382
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - compas
     - autobahn ==20.12.3
     - websockets ==9.1
@@ -29,6 +29,7 @@ test:
     - compas_cloud
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
